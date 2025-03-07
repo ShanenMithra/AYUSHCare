@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Shelf</title>
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #45291F;
+    background-image: url('shelf3.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+        h1 {
+            text-align: center;
+            font-size: 60px;
+            color: #8FAE6D;
+            font-family: 'Dancing Script', cursive;
+            margin: 0;
+            padding: 30px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            background: #45291F;
+        }
+        .shelf {
+            display: flex;
+            gap: 50px;
+            position: relative;
+        }
+        
+        .plant-img {
+            width: 150px;
+            cursor: pointer;
+            position: absolute;
+        }
+        /* Individual positions for each plant */
+        .jar { top: 30px; right: 200px; width: 250px; height: 250px; }
+        .turmeric { top: 30px; right: -100px; width: 250px; height: 250px; }
+        .tulsi { top: 30px; left: 170px; width: 250px; height: 250px;}
+        .brahmi { top: -205px; left: -115px; width: 250px; height: 250px; }
+        .amla { top: -205px; right: 200px; width: 250px; height: 250px;}
+        .shatavari { top: -205px; left: 200px; width: 250px; height: 250px; }
+        .guggul { top: -430px; left: -450px; width: 250px; height: 250px;}
+        .licorice { top: -430px; left:-100px; width: 250px; height: 250px; }
+        .punarnava {top: -430px; left: 240px; width: 250px; height: 250px}
+        
+        .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(215, 213, 196);
+    padding: 30px; /* Increased padding for more space */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    text-align: center;
+    width: 400px; /* Adjust width to make it bigger */
+    max-width: 80%; /* Ensures it doesn't get too big on smaller screens */
+}
+
+        .popup .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .popup img {
+    width: 200px; /* Increase width */
+    height: 200px; /* Increase height */
+    display: none;
+    border-radius: 5px;
+}
+        .popup img.active {
+            display: block;
+        }
+        .arrow {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .left-arrow { left: 10px; }
+        .right-arrow { right: 10px; }
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Plant Shelf</h1>
+    <div class="shelf">
+        <img src="jar2.png" alt="Jar" class="plant-img jar" onclick="showPopup('jar-popup')">
+        <img src="turmeric.png" alt="Turmeric" class="plant-img turmeric" onclick="showPopup('turmeric-popup')">
+        <img src="tulsi.png" alt="Tulsi" class="plant-img tulsi" onclick="showPopup('tulsi-popup')">
+        <img src="brahmi.png" alt="Brahmi" class="plant-img brahmi" onclick="showPopup('brahmi-popup')">
+        <img src="amla.png" alt="Amla" class="plant-img amla" onclick="showPopup('amla-popup')">
+        <img src="shatavari.png" alt="Shatavari" class="plant-img shatavari" onclick="showPopup('shatavari-popup')">
+        <img src="guggul.png" alt="Guggul" class="plant-img guggul" onclick="showPopup('guggul-popup')">
+        <img src="licorice.png" alt="Licorice" class="plant-img licorice" onclick="showPopup('licorice-popup')">
+        <img src="punarnava.png" alt="Punarnava" class="plant-img punarnava" onclick="showPopup('punarnava-popup')">
+    </div>
+    
+    <!-- Popup Example with Scrolling Images -->
+    <div id="tulsi-popup" class="popup">
+        <span class="close" onclick="closePopup('tulsi-popup')">&times;</span>
+        <h2>Tulsi (Ocimum sanctum)</h2>
+        <p>Also known as Holy Basil. It is known for its immune boosting properties due to its high levels of antioxidants and antimicrobial compounds. Tulsi is considered an effective remedy for respiratory ailments like cough, cold and asthma.</p>
+        <div class="image-container">
+            <button class="arrow left-arrow" onclick="prevImage('tulsi')">&#10094;</button>
+            <img src="tulsi1.jpg" class="tulsi active">
+            <img src="tulsi2.jpg" class="tulsi">
+            <img src="tulsi3.jpg" class="tulsi">
+            <button class="arrow right-arrow" onclick="nextImage('tulsi')">&#10095;</button>
+        </div>
+    </div>
+
+    <div id="turmeric-popup" class="popup">
+        <span class="close" onclick="closePopup('turmeric-popup')">&times;</span>
+        <h2>Turmeric (Curcuma longa)</h2>
+        <p>High in antioxidants, vitamin C, and antioxidant enzymes. Turmeric also helps manage diabetes by lowering blood glucose levels.Its antioxidant property helps reduce diabetes-related complications like ulcers, wounds, and kidney damage.</p>
+        <div class="image-container">
+            <button class="arrow left-arrow" onclick="prevImage('turmeric')">&#10094;</button>
+            <img src="turmeric1.jpg" class="turmeric active">
+            <img src="turmeric2.jpg" class="turmeric">
+            <img src="turmeric3.jpg" class="turmeric">
+            <button class="arrow right-arrow" onclick="nextImage('turmeric')">&#10095;</button>
+        </div>
+    </div>
+    
+    <div id="jar-popup" class="popup">
+        <span class="close" onclick="closePopup('jar-popup')">&times;</span>
+        <h2>Neem (Azadirachta indica)</h2>
+        <p>Inhibits the growth of oral bacteria responsible for cavities and gum disease. Has anti-inflammatory and antibacterial properties, making it effective to treat a variety of skin conditions, including acne, eczema, and psoriasis.</p>
+        <div class="image-container">
+            <button class="arrow left-arrow" onclick="prevImage('jar')">&#10094;</button>
+            <img src="neem1.jpg" class="jar active">
+            <img src="neem2.jpg" class="jar">
+            <img src="neem3.jpg" class="jar">
+            <button class="arrow right-arrow" onclick="nextImage('jar')">&#10095;</button>
+        </div>
+    </div>
+
+    <div id="brahmi-popup" class="popup">
+        <span class="close" onclick="closePopup('brahmi-popup')">&times;</span>
+        <h2>Brahmi (Bacopa Monnieri)</h2>
+        <p>Brahmi tea that is made by brewing Brahmi leaves helps to manage cold, chest congestion and bronchitis by clearing out the mucus from the air passages which helps ease breathing. It also reduces pain and inflammation in the throat and respiratory tracts due to its anti-inflammatory property. </p>
+        <div class="image-container">
+            <button class="arrow left-arrow" onclick="prevImage('brahmi')">&#10094;</button>
+            <img src="brahmi1.jpg" class="brahmi active">
+            <img src="brahmi2.jpg" class="brahmi">
+            <img src="brahmi3.jpg" class="brahmi">
+            <button class="arrow right-arrow" onclick="nextImage('brahmi')">&#10095;</button>
+        </div>
+    </div>
+
+    <div id="amla-popup" class="popup">
+        <span class="close" onclick="closePopup('amla-popup')">&times;</span>
+        <h2>Amla (Phyllanthus emblica)</h2>
+        <p>Amla has 20 times more than an orange. This, combined with other antioxidant components, makes it an excellent choice for strengthening the body's natural defenses and fighting free radicals, harmful molecules that damage cells over time. </p>
+        <div class="image-container">
+            <button class="arrow left-arrow" onclick="prevImage('amla')">&#10094;</button>
+            <img src="amla1.jpg" class="amla active">
+            <img src="amla2.jpg" class="amla">
+            <img src="amla3.jpg" class="amla">
+            <button class="arrow right-arrow" onclick="nextImage('amla')">&#10095;</button>
+        </div>
+    </div>
+
+    <div id="shatavari-popup" class="popup">
+        <span class="close" onclick="closePopup('shatavari-popup')">&times;</span>
+        <h2>Shatavari (Asparagus racemosus)</h2>
+        <p>It is helpful in menstrual disorders and acts as a uterine tonic. Shatavari is also beneficial for men as it improves testosterone levels. Applying Shatavari powder paste along with milk or honey on the skin helps to get rid of wrinkles.</p>
+        <div class="image-container">
+            <button class="arrow left-arrow" onclick="prevImage('shatavari')">&#10094;</button>
+            <img src="shatavari1.jpg" class="shatavari active">
+            <img src="shatavari2.jpg" class="shatavari">
+            <img src="shatavari3.jpg" class="shatavari">
+            <button class="arrow right-arrow" onclick="nextImage('shatavari')">&#10095;</button>
+        </div>
+    </div>
+
+    <div id="guggul-popup" class="popup">
+        <span class="close" onclick="closePopup('guggul-popup')">&times;</span>
+        <h2>Guggul (Commiphora wightii)</h2>
+        <p>Guggul has been studied for its potential to treat acne.
+
+            Research has found that it may be effective in complementary and alternative treatments for nodulocystic acne, a severe form of acne that affects the face, chest, and back.According to Ayurveda, Guggul is useful in weight management as it helps to improve metabolism and reduce toxic remains in the body due to improper digestion</p>
+        <div class="image-container">
+            <button class="arrow left-arrow" onclick="prevImage('guggul')">&#10094;</button>
+            <img src="guggul1.jpg" class="guggul active">
+            <img src="guggul2.jpg" class="guggul">
+            <img src="guggul3.jpg" class="guggul">
+            <button class="arrow right-arrow" onclick="nextImage('guggul')">&#10095;</button>
+        </div>
+    </div>
+    
+    <div id="licorice-popup" class="popup">
+        <span class="close" onclick="closePopup('licorice-popup')">&times;</span>
+        <h2>Licorice (Glycyrrhiza glabra)</h2>
+        <p>used in Ayurveda to soothe stomach complaints like acidity, occasional heartburn, and other digestive discomforts. Licorice contains a compound called glycyrrhizin, which supports liver health while promoting a healthy inflammatory response in the body.</p>
+        <div class="image-container">
+            <button class="arrow left-arrow" onclick="prevImage('licorice')">&#10094;</button>
+            <img src="licorice1.jpg" class="licorice active">
+            <img src="licorice2.jpg" class="licorice">
+            <img src="licorice3.jpg" class="licorice">
+            <button class="arrow right-arrow" onclick="nextImage('licorice')">&#10095;</button>
+        </div>
+    </div>
+
+    <div id="punarnava-popup" class="popup">
+        <span class="close" onclick="closePopup('punarnava-popup')">&times;</span>
+        <h2>Punarnava (Boerhavia diffusa)</h2>
+        <p>Punarnava is a traditional ayurvedic plant that is used to rejuvenate the whole body. Punarnava has powerful analgesic and anti-inflammatory properties, which is extremely beneficial in reducing joint and muscle pain. It stimulates the secretion of digestive juices thereby increasing the absorption of essential nutrients. </p>
+        <div class="image-container">
+            <button class="arrow left-arrow" onclick="prevImage('punarnava')">&#10094;</button>
+            <img src="punarnava1.jpg" class="punarnava active">
+            <img src="punarnava2.jpg" class="punarnava">
+            <img src="punarnava3.jpg" class="punarnava">
+            <button class="arrow right-arrow" onclick="nextImage('punarnava')">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentPopup = null;
+    
+        function showPopup(popupId) {
+            if (currentPopup) {
+                currentPopup.style.display = "none"; // Close any open popup
+            }
+    
+            let popup = document.getElementById(popupId);
+            if (popup) {
+                popup.style.display = "block";
+                currentPopup = popup;
+    
+                // Reset to first image
+                let images = popup.querySelectorAll("img");
+                images.forEach(img => img.classList.remove("active"));
+                if (images.length > 0) images[0].classList.add("active"); // Make the first image active
+            }
+        }
+    
+        // Close the popup when clicking 'X'
+        document.addEventListener("click", function(event) {
+            if (event.target.classList.contains("close")) {
+                let popup = event.target.closest(".popup");
+                if (popup) {
+                    popup.style.display = "none";
+                    currentPopup = null;
+                }
+            }
+        });
+    
+        // Image navigation logic
+        document.addEventListener("click", function(event) {
+            if (event.target.classList.contains("arrow")) {
+                let popup = event.target.closest(".popup");
+                let images = popup.querySelectorAll("img");
+                let currentIndex = Array.from(images).findIndex(img => img.classList.contains("active"));
+    
+                if (event.target.classList.contains("right-arrow")) {
+                    if (currentIndex < images.length - 1) {
+                        images[currentIndex].classList.remove("active");
+                        images[currentIndex + 1].classList.add("active");
+                    }
+                } else if (event.target.classList.contains("left-arrow")) {
+                    if (currentIndex > 0) {
+                        images[currentIndex].classList.remove("active");
+                        images[currentIndex - 1].classList.add("active");
+                    }
+                }
+            }
+        });
+    </script>
+    
+    
+    
+</body>
+</html>

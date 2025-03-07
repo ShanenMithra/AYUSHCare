@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYUSH System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('https://img.freepik.com/premium-photo/ayurveda-background_1342603-12644.jpg') no-repeat center center/cover; /* Background image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Raleway', sans-serif;
+        }
+        h1 {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3rem;
+        color: #749c3a;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-family: 'Raleway', sans-serif;
+    }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 130px; /* Larger gap between buttons */
+            justify-content: center;
+        }
+
+        /* Badge Effect */
+        .badge {
+            display: block;
+            position: relative;
+            width: 300px; /* Increased size */
+            height: 300px; /* Increased size */
+            cursor: pointer;
+            background: #e3c388e3 no-repeat 100% 50%;
+            background-size: 120%;
+            border-radius: 50%;
+            transition: all 1s cubic-bezier(.55, 0, .1, 1); /* Slower transition */
+            box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.75);
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        .badge:hover {
+            box-shadow: 0px 0.5rem 2rem rgba(0, 0, 0, 0.75);
+            background-position: 0% 50%;
+        }
+
+        .badge:hover .text {
+            transform: rotate(-45deg) translate(0px) rotate(-315deg);
+            background: #749c3a;
+            width: 300px; /* Increased size */
+            height: 300px; /* Increased size */
+            margin-top: -150px; /* Adjusted for new height */
+            margin-left: -150px; /* Adjusted for new width */
+            transition: all 1s cubic-bezier(.55, 0, .1, 1), letter-spacing 2s ease-out; /* Slower transition */
+        }
+
+        .badge .text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 250px; /* Increased size */
+            height: 250px; /* Increased size */
+            left: 50%;
+            top: 50%;
+            margin-top: -125px; /* Adjusted for new height */
+            margin-left: -125px; /* Adjusted for new width */
+            font-size: 1.5rem; /* Adjusted font size */
+            text-align: center;
+            color: #fff;
+            border-radius: 50%;
+            background: #749c3a;
+            transform: rotate(-180deg) translate(-150px) rotate(180deg);
+            box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.5);
+            transition: all 1s cubic-bezier(.55, 0, .1, 1); /* Slower transition */
+            padding: 20px; /* Added padding to fit text */
+            box-sizing: border-box; /* Ensure padding is included in dimensions */
+            white-space: normal; /* Allow text to wrap */
+            word-wrap: break-word; /* Break long words if necessary */
+            line-height: 1.5; /* Adjusted line height for better readability */
+        }
+    </style>
+</head>
+<body>
+    <h1>AYUSHCare</h1>
+    <div class="container">
+        <!-- Health Risk Analysis -->
+        <a href="bot.html" class="badge" onclick="redirectAfterAnimation(event, 'bot.html')">
+            <div class="text">Health Risk<br>Analysis</div>
+        </a>
+
+        <!-- AYUSH-Recos -->
+        <a href="treatment.html" class="badge" onclick="redirectAfterAnimation(event, 'treatment.html')">
+            <div class="text">AYUSH-Recos</div>
+        </a>
+
+        <!-- Virtual Plant Exhibit -->
+        <a href="garden3.html" class="badge" onclick="redirectAfterAnimation(event, 'garden3.html')">
+            <div class="text">Virtual Plant<br>Exhibit</div>
+        </a>
+
+        <!-- Guided Yoga -->
+        <a href="indexx.html" class="badge" onclick="redirectAfterAnimation(event, 'indexx.html')">
+            <div class="text">Guided Yoga</div>
+        </a>
+    </div>
+
+    <script>
+        // Function to redirect after animation
+        function redirectAfterAnimation(event, url) {
+            event.preventDefault(); // Prevent immediate redirection
+            const badge = event.currentTarget; // Get the clicked badge
+
+            // Add a class to trigger the roll-in animation
+            badge.classList.add('animate');
+
+            // Wait for the animation to complete (1 second in this case)
+            setTimeout(() => {
+                window.location.href = url; // Redirect to the specified URL
+            }, 1000); // Match the duration of the animation
+        }
+    </script>
+</body>
+</html>

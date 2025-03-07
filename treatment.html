@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYUSH Treatments</title>
+<style>
+body {
+  background-image: url('https://i.pinimg.com/736x/19/68/b0/1968b06afc1ef281a748c9b307e39f06.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 50px;
+}
+
+select {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Flip Card Styles */
+.card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  display: inline-block;
+  margin: 10px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid #496d21; /* Green border */
+  border-radius: 1rem;
+}
+
+.card-front {
+  background: linear-gradient(120deg, #e3e8d7 60%, #a3b37a 88%, #a8b68e 40%, #83975e 48%);
+  color: #496d21; /* Dark green text */
+}
+
+.card-back {
+  background: linear-gradient(120deg, #83975e 30%, #343c26 88%, #c1cbaf 40%, #b5c19e 78%);
+  color: white; /* White text */
+  transform: rotateY(180deg);
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 10px;
+  font-weight: bold;
+}
+</style>
+<script>
+function showCards() {
+  const disease = document.getElementById("disease").value;
+  document.querySelectorAll(".card").forEach(card => {
+    card.style.display = "none";
+  });
+  if (disease) {
+    document.querySelectorAll("." + disease).forEach(card => {
+      card.style.display = "inline-block";
+    });
+  }
+}
+</script>
+</head>
+<body>
+<h1>Select Disease</h1>
+<p class="subtitle"><strong>Each of these medicinal practices may suggest the following treatments.</strong></p>
+<select id="disease" onchange="showCards()">
+  <option value="">Select</option>
+  <option value="Cough">Cough</option>
+  <option value="Fever">Fever</option>
+  <option value="Migraine">Migraine</option>
+  <option value="Asthma">Asthma</option>
+  <option value="Arthritis">Arthritis</option>
+  <option value="Hypertension">Hypertension</option>
+  <option value="Psoriasis">Psoriasis</option>
+  <option value="Obesity">Obesity</option>
+  <option value="Indigestion">Indigestion</option>
+  <option value="Insomnia">Insomnia</option>
+  <option value="Eczema">Eczema</option>
+  <option value="Osteoarthritis">Osteoarthritis</option>
+  <option value="Sinusitis">Sinusitis</option>
+</select>
+
+<div class="container">
+  <!-- Cough -->
+  <div class="card Cough">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Holy Basil (Tulsi) and Turmeric</p>
+      </div>
+    </div>
+  </div>
+  <div class="card Cough">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Bhastrika and Anulom Vilom</p>
+      </div>
+    </div>
+  </div>
+  <div class="card Cough">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Saffron, Honey, and Ginger</p>
+      </div>
+    </div>
+  </div>
+  <div class="card Cough">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Malabar Nut (Vasa)</p>
+      </div>
+    </div>
+  </div>
+  <div class="card Cough">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Bryonia for dry cough</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add more cards for other diseases similarly -->
+   <!-- Fever -->
+<div class="card Fever">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Ginger, Turmeric, and Honey</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Fever">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Kapalbhati and Anulom Vilom</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Fever">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Lemon and Honey</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Fever">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Moringa Leaves</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Fever">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Aconite for fever with restlessness</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Migraine -->
+<div class="card Migraine">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Peppermint and Lavender Oil</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Migraine">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Savasana and Pranayama</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Migraine">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Cardamom and Cinnamon</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Migraine">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Brahmi Herb</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Migraine">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Belladonna for throbbing pain</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Asthma -->
+  <div class="card Asthma">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Ginger and Honey</p>
+      </div>
+    </div>
+  </div><div class="card Asthma">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Bhastrika and Anulom Vilom</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Asthma">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Black Seed Oil</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Asthma">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Vasa (Malabar Nut)</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Asthma">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Arsenicum album</p>
+      </div>
+    </div>
+  </div>
+  <!-- Arthritis -->
+<div class="card Arthritis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Ashwagandha and Guggulu</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Arthritis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Bujangasana and Tadasana</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Arthritis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Eucalyptus Oil and Mustard Oil</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Arthritis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Ginger and Turmeric</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Arthritis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Rhus tox for joint pain</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Hypertension -->
+  <div class="card Hypertension">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Garlic, Turmeric, and Ashwagandha</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Hypertension">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Anulom Vilom and Sirsasana</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Hypertension">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Olive Oil and Lemon</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Hypertension">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Basil Leaves and Moringa</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Hypertension">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Belladonna for high blood pressure</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Psoriasis -->
+  <div class="card Psoriasis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Neem, Turmeric, and Aloe Vera</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Psoriasis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Adho Mukha Svanasana and Pranayama</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Psoriasis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Olive Oil and Fish Oil</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Psoriasis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Bitter Gourd and Aloe Vera</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Psoriasis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Graphites for skin lesions</p>
+      </div>
+    </div>
+  </div>
+  <!-- Obesity -->
+<div class="card Obesity">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Guggulu, Triphala, and Fenugreek</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Obesity">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Surya Namaskar and Dhanurasana</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Obesity">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Black Cumin and Lemon</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Obesity">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Karela and Moringa</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Obesity">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Calcarea carb for weight management</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Indigestion -->
+  <div class="card Indigestion">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Ginger, Fennel, and Aloe Vera</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Indigestion">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Pavanmuktasana and Bhujangasana</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Indigestion">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Cumin, Caraway, and Ginger</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Indigestion">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Sunnam and Dried Ginger</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Indigestion">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Nux Vomica for indigestion</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Insomnia -->
+  <div class="card Insomnia">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Ashwagandha and Jatamansi</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Insomnia">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Savasana and Anulom Vilom</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Insomnia">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Chamomile and Lavender</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Insomnia">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Pudina and Ajwain</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Insomnia">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Coffea Cruda for sleeplessness</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Depression and Anxiety -->
+  <div class="card DepressionAnxiety">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Brahmi, Ashwagandha, and Jatamansi</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card DepressionAnxiety">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Pranayama and Vipassana</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card DepressionAnxiety">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Saffron and Fennel</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card DepressionAnxiety">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Sandalwood and Pomegranate</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card DepressionAnxiety">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Aurum Met for depression</p>
+      </div>
+    </div>
+  </div>
+<!-- Eczema -->
+<div class="card Eczema">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Neem, Turmeric, and Aloe Vera</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Eczema">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Bhastrika and Pranayama</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Eczema">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Saffron and Olive Oil</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Eczema">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Coconut Oil and Sandalwood</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Eczema">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Graphites for skin conditions</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Osteoarthritis -->
+  <div class="card Osteoarthritis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Ashwagandha, Guggulu, and Shallaki</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Osteoarthritis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Tadasana and Trikonasana</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Osteoarthritis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Turmeric and Olive Oil</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Osteoarthritis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Eucalyptus Oil and Aloe Vera</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Osteoarthritis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Rhus tox for joint pain</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sinusitis -->
+  <div class="card Sinusitis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">A</p>
+        <p>Ayurvedic Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Tulsi, Ginger, and Honey</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Sinusitis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">Y</p>
+        <p>Yoga Therapy</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Bhastrika and Ujjayi Pranayama</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Sinusitis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">U</p>
+        <p>Unani Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Cinnamon and Clove</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Sinusitis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">S</p>
+        <p>Siddha Medicine</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Peppermint and Turmeric</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card Sinusitis">
+    <div class="card-inner">
+      <div class="card-front">
+        <p class="title">H</p>
+        <p>Homeopathy Treatment</p>
+      </div>
+      <div class="card-back">
+        <p class="title">Kali Bichromicum for sinus issues</p>
+      </div>
+    </div>
+  </div>
+
+  </div>
+      
+</body>
+</html>
